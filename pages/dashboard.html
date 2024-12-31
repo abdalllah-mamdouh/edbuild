@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Metrics Dashboard</title>
+    <link rel="stylesheet" href="..\css\styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+     <!-- Navigation Bar -->
+     <nav class="navbar">
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="Branding Management.html">Branding Management</a></li>
+            <li><a href="tenant-dashboard.html">Tenant Dashboard</a></li>
+            <li><a href="User Management.html">User Management</a></li>
+            <li><a href="tenant.html">Tenant Management</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <h1 class="fade-in">Advanced Metrics Dashboard</h1>
+            <p class="fade-in">Analyze revenue, engagement, and trends with ease.</p>
+        </header>
+
+        <!-- Centralized Metrics -->
+        <section class="metrics-section">
+            <h2>Centralized Metrics</h2>
+            <div class="metrics fade-in">
+                <div class="metric">
+                    <h3>Total Tenants</h3>
+                    <p class="metric-value" id="total-tenants">150</p>
+                </div>
+                <div class="metric">
+                    <h3>Active Tenants</h3>
+                    <p class="metric-value" id="active-tenants">120</p>
+                </div>
+                <div class="metric">
+                    <h3>Inactive Tenants</h3>
+                    <p class="metric-value" id="inactive-tenants">30</p>
+                </div>
+                <div class="metric">
+                    <h3>Total Revenue</h3>
+                    <p class="metric-value" id="total-revenue">$1,250,000</p>
+                </div>
+                <div class="metric">
+                    <h3>Active Users Today</h3>
+                    <p class="metric-value" id="active-users">3,200</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Section -->
+        <section class="charts-section fade-in">
+            <h2>Charts</h2>
+            <div class="charts">
+                <div class="chart">
+                    <h4>Revenue by Plan</h4>
+                    <canvas id="revenuePlanChart"></canvas>
+                </div>
+                <div class="chart">
+                    <h4>Tenant Onboarding Trends</h4>
+                    <canvas id="onboardingChart"></canvas>
+                </div>
+                <div class="chart">
+                    <h4>Geographical Distribution</h4>
+                    <canvas id="geoHeatmap"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Export Section -->
+        <section class="export-section fade-in">
+            <h2>Export Data</h2>
+            <button class="export-btn" id="export-csv">Export as CSV</button>
+            <button class="export-btn" id="export-pdf">Export as PDF</button>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="..\js\chart.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenant Dashboard</title>
+    <link rel="stylesheet" href="..\css\tenant-dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+     <!-- Navigation Bar -->
+     <nav class="navbar">
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="Branding Management.html">Branding Management</a></li>
+            <li><a href="tenant-dashboard.html">Tenant Dashboard</a></li>
+            <li><a href="User Management.html">User Management</a></li>
+            <li><a href="tenant.html">Tenant Management</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <div class="dashboard-container fade-in">
+        <!-- Header -->
+        <div class="dashboard-header slide-in-down">
+            <h1>Tenant Dashboard</h1>
+            <p>Effortlessly manage tenant details, metrics, and subscriptions.</p>
+        </div>
+
+        <!-- Basic Information Section -->
+        <section class="tenant-details fade-in-up">
+            <h2>Basic Information & Billing Details</h2>
+            <table class="details-table">
+                <tbody>
+                    <tr>
+                        <th>Name</th>
+                        <td>EduHub</td>
+                    </tr>
+                    <tr>
+                        <th>Contact</th>
+                        <td>contact@EduHub.com</td>
+                    </tr>
+                    <tr>
+                        <th>Domain</th>
+                        <td>EduHub.com</td>
+                    </tr>
+                    <tr>
+                        <th>Plan</th>
+                        <td>Premium</td>
+                    </tr>
+                    <tr>
+                        <th>Last Payment</th>
+                        <td>Dec 15, 2024</td>
+                    </tr>
+                    <tr>
+                        <th>Next Payment Due</th>
+                        <td>Jan 15, 2025</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Usage Metrics Section -->
+        <section class="metrics-section fade-in-up">
+            <h2>Usage Metrics</h2>
+            <canvas id="usageMetricsChart"></canvas>
+        </section>
+
+        <!-- Activity Logs Section -->
+        <section class="tenant-list fade-in-up">
+            <h2>Activity Logs</h2>
+            <div class="timeline">
+                <div class="timeline-item slide-in-left">
+                    <div class="timeline-content">
+                        <h4>Dec 10, 2024</h4>
+                        <p>Admin updated tenant logo.</p>
+                    </div>
+                </div>
+                <div class="timeline-item slide-in-left">
+                    <div class="timeline-content">
+                        <h4>Dec 9, 2024</h4>
+                        <p>User Moahmed Hassan added to tenant.</p>
+                    </div>
+                </div>
+                <div class="timeline-item slide-in-left">
+                    <div class="timeline-content">
+                        <h4>Nov 1, 2024</h4>
+                        <p>Subscription upgraded to Premium.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscription and Plan Management Section -->
+        <section class="subscription-management fade-in-up">
+            <h2>Subscription and Plan Management</h2>
+            <div class="subscription-container">
+                <div class="feature-card zoom-in">
+                    <h3>Assign Subscription Plans</h3>
+                    <p>Select and assign plans like Basic, Premium, or Enterprise to tenants.</p>
+                    <button class="action-btn" onclick="assignPlan()">Assign Plan</button>
+                </div>
+                <div class="feature-card zoom-in">
+                    <h3>Upgrade/Downgrade Plans</h3>
+                    <p>Upgrade or downgrade tenant plans with automatic prorated adjustments.</p>
+                    <button class="action-btn" onclick="managePlans()">Manage Plans</button>
+                </div>
+                <div class="feature-card zoom-in">
+                    <h3>Monitor Overdue Payments</h3>
+                    <p>Track overdue accounts and take actions like suspending delinquent accounts.</p>
+                    <button class="action-btn" onclick="monitorPayments()">Monitor Payments</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Manage Subscriptions Section -->
+        <section class="manage-subscriptions fade-in-up">
+            <h2>Manage Subscriptions</h2>
+            <div class="subscription-actions">
+                <button class="btn upgrade slide-in-up" onclick="upgradePlan()">Upgrade Plan</button>
+                <button class="btn downgrade slide-in-up" onclick="downgradePlan()">Downgrade Plan</button>
+                <button class="btn cancel slide-in-up" onclick="cancelSubscription()">Cancel Subscription</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Chart.js Integration -->
+    <script>
+        const ctx = document.getElementById('usageMetricsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Storage Used (GB)', 'Active Sessions', 'Total Users'],
+                datasets: [{
+                    label: 'Usage Metrics',
+                    data: [120, 80, 450],
+                    backgroundColor: ['#5bcfde', '#96c460', '#FFC107'],
+                    borderColor: ['#43b2c0', '#7aad56', '#E5B200'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    <script src="..\js\tenant-dashboard.js"></script>
+</body>
+</html>

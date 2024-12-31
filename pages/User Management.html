@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="../css/user-management.css">
+</head>
+<body>
+     <!-- Navigation Bar -->
+     <nav class="navbar">
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="Branding Management.html">Branding Management</a></li>
+            <li><a href="tenant-dashboard.html">Tenant Dashboard</a></li>
+            <li><a href="User Management.html">User Management</a></li>
+            <li><a href="tenant.html">Tenant Management</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>User Management</h1>
+            <p>Efficiently manage platform users with advanced features like search, bulk actions, and CSV export.</p>
+        </header>
+        <main>
+            <section class="user-table-section">
+                <h2>Manage Users</h2>
+                <div class="table-controls">
+                    <input type="text" id="searchInput" placeholder="Search by name..." />
+                    <select id="roleFilter">
+                        <option value="">All Roles</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Program Manager">Program Manager</option>
+                        <option value="Data Analyst">Data Analyst</option>
+                        <option value="Operation Manager">Operation Manager</option>
+                        <option value="Content Manager">Content Manager</option>
+                        <option value="HR Manager">HR Manager</option>
+                        <option value="Technical Lead">Technical Lead</option>
+                        <option value="Marketing Manager">Marketing Manager</option>
+                        <option value="Administrator">Administrator</option>
+                        <option value="Customer Support">Customer Support</option>
+                    </select>
+                    <button class="export-btn" onclick="exportCSV()">Export CSV</button>
+                </div>
+                <table id="userTable" aria-label="User Table">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" id="selectAll" /></th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic rows will be added here -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- User Form Section -->
+            <section class="user-form-section">
+                <h2>Add/Edit User</h2>
+                <form id="userForm">
+                    <div class="form-group">
+                        <label for="username">Name:</label>
+                        <input type="text" id="username" placeholder="Enter username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" placeholder="Enter email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">Role:</label>
+                        <select id="role" required>
+                            <option value="" disabled selected>Select a role</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Program Manager">Program Manager</option>
+                            <option value="Data Analyst">Data Analyst</option>
+                            <option value="Operation Manager">Operation Manager</option>
+                            <option value="Content Manager">Content Manager</option>
+                            <option value="HR Manager">HR Manager</option>
+                            <option value="Technical Lead">Technical Lead</option>
+                            <option value="Marketing Manager">Marketing Manager</option>
+                            <option value="Administrator">Administrator</option>
+                            <option value="Customer Support">Customer Support</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" id="saveUser">Save</button>
+                        <button type="button" id="cancelEdit">Cancel</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="../js/user-management.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branding Management</title>
+    <link rel="stylesheet" href="..\css\branding-management.css">
+</head>
+<body>
+     <!-- Navigation Bar -->
+     <nav class="navbar">
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="Branding Management.html">Branding Management</a></li>
+            <li><a href="tenant-dashboard.html">Tenant Dashboard</a></li>
+            <li><a href="User Management.html">User Management</a></li>
+            <li><a href="tenant.html">Tenant Management</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Branding Management</h1>
+            <p>Customize your platform's branding, including colors, logos, and typography.</p>
+        </header>
+        <main class="branding-layout">
+            <!-- Controls Section -->
+            <section class="branding-form-section">
+                <h2>Update Branding</h2>
+                <form id="brandingForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="primaryColor">Primary Color</label>
+                            <input type="color" id="primaryColor" value="#5bcfde" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="secondaryColor">Secondary Color</label>
+                            <input type="color" id="secondaryColor" value="#96c460" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="logo">Logo</label>
+                            <input type="file" id="logo" accept="image/*">
+                        </div>
+                        <div class="form-group">
+                            <label for="typography">Typography</label>
+                            <select id="typography">
+                                <option value="'Roboto', sans-serif" selected>Roboto</option>
+                                <option value="'Open Sans', sans-serif">Open Sans</option>
+                                <option value="'Montserrat', sans-serif">Montserrat</option>
+                                <option value="'Lato', sans-serif">Lato</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit">Save Branding</button>
+                </form>
+            </section>
+            <!-- Preview Section -->
+            <section class="branding-preview-section">
+                <h2>Preview</h2>
+                <div id="brandingPreview">
+                    <h1>Brand Name</h1>
+                    <p>This is how your branding will look on the platform.</p>
+                    <div id="brandingLogoPreview"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+     <!-- Toast Notification -->
+     <div id="toast" class="toast">Branding has been updated!</div>
+    <script src="..\js\branding-management.js"></script>
+</body>
+</html>

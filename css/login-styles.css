@@ -1,0 +1,168 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #5bcfde, #96c460);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Login Container */
+.login-container {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Login Form */
+.login-form h2 {
+    text-align: center;
+    color: #5bcfde;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input::placeholder {
+    color: #bbb;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #5bcfde;
+    box-shadow: 0 0 8px rgba(91, 207, 222, 0.5);
+}
+
+/* Checkbox Group */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Add some space between the checkbox and the text */
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 10px; /* Adjust spacing from the input fields */
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    height: auto;
+    margin: 0; /* Remove extra margin from the checkbox */
+    accent-color: #5bcfde; /* Apply theme color to the checkbox */
+}
+/* Password Wrapper */
+.password-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    flex: 1;
+}
+
+.password-wrapper button {
+    margin-left: 10px;
+    background: transparent;
+    border: none;
+    color: #5bcfde;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.password-wrapper button:hover {
+    color: #96c460;
+}
+
+/* Login Button */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #5bcfde;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login-btn:hover {
+    background: #96c460;
+    transform: translateY(-2px);
+}
+
+/* Links */
+.form-links {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.form-links a {
+    color: #5bcfde;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.form-links a:hover {
+    text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px;
+    }
+
+    .login-form h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-group input {
+        font-size: 0.9rem;
+    }
+
+    .password-wrapper button {
+        font-size: 0.8rem;
+    }
+}

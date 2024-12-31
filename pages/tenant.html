@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenant Management</title>
+    <link rel="stylesheet" href="..\css\tenant-management.css">
+</head>
+<body>
+     <!-- Navigation Bar -->
+     <nav class="navbar">
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="Branding Management.html">Branding Management</a></li>
+            <li><a href="tenant-dashboard.html">Tenant Dashboard</a></li>
+            <li><a href="User Management.html">User Management</a></li>
+            <li><a href="tenant.html">Tenant Management</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>Tenant Management System</h1>
+            <p>Manage EdTech tenants with ease, including adding, editing, messaging, and exporting tenant data.</p>
+        </header>
+        <main>
+            <!-- Search and Filter Section -->
+            <section class="search-filter-section">
+                <input type="text" id="searchTenant" placeholder="Search tenant by name">
+                <select id="locationFilter">
+                    <option value="">Filter by Location</option>
+                    <option value="Egypt">Egypt</option>
+                    <option value="Saudi Arabia">Saudi Arabia</option>
+                    <option value="UAE">UAE</option>
+                </select>
+                <button onclick="exportTenantsToCSV()">Export CSV</button>
+            </section>
+
+            <!-- Tenant Form Section -->
+            <section class="tenant-form-section">
+                <h2>Add New Tenant</h2>
+                <form id="tenantForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tenantFullName">Full Name</label>
+                            <input type="text" id="tenantFullName" placeholder="Enter full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tenantBusinessName">Business Name</label>
+                            <input type="text" id="tenantBusinessName" placeholder="Enter business name" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tenantLocation">Location</label>
+                            <input type="text" id="tenantLocation" placeholder="Enter location" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tenantDetails">Business Details</label>
+                            <textarea id="tenantDetails" placeholder="Enter business details"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" id="addTenantBtn">Add Tenant</button>
+                </form>
+            </section>
+
+            <!-- Tenant Details Modal -->
+            <div id="tenantModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Tenant Details</h2>
+                    <p><strong>Full Name:</strong> <span id="modalFullName"></span></p>
+                    <p><strong>Business Name:</strong> <span id="modalBusinessName"></span></p>
+                    <p><strong>Location:</strong> <span id="modalLocation"></span></p>
+                    <p><strong>Details:</strong></p>
+                    <p id="modalDetails"></p>
+                </div>
+            </div>
+
+            <!-- Tenant Messaging Modal -->
+            <div id="messageModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeMessageModal()">&times;</span>
+                    <h2>Send Message to Tenant</h2>
+                    <form id="messageForm">
+                        <p><strong>Tenant:</strong> <span id="messageTenantName"></span></p>
+                        <label for="messageContent">Message:</label>
+                        <textarea id="messageContent" placeholder="Type your message here..." required></textarea>
+                        <button type="submit" id="sendMessageBtn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Tenant Table Section -->
+            <section class="tenant-table-section">
+                <h2>Tenant List</h2>
+                <table id="tenantTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Business Name</th>
+                            <th>Location</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic rows will go here -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="..\js\tenant-management.js"></script>
+</body>
+</html>
